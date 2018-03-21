@@ -1,20 +1,16 @@
-const btnMudaLayout = document.querySelector('#btnMudaLayout')
-const mural = document.querySelector('.mural')
+;(function() {
+  const button = document.querySelector('#btnMudaLayout')
+  const mural = document.querySelector('.mural')
 
-btnMudaLayout.addEventListener('click', () => {
-  if (mural.classList.contains('mural--linha')) {
-    btnMudaLayout.textContent = 'Linhas'
-  } else {
-    btnMudaLayout.textContent = 'Blocos'
-  }
+  button.classList.remove('no-js')
 
-  mural.classList.toggle('mural--linha')
-})
+  btnMudaLayout.addEventListener('click', () => {
+    if (mural.classList.contains('mural--linha')) {
+      btnMudaLayout.textContent = 'Linhas'
+    } else {
+      btnMudaLayout.textContent = 'Blocos'
+    }
 
-// btnMudaLayout.addEventListener('click', function() {
-//   if (this.textContent.trim() === 'Linhas') {
-//     this.textContent = 'Blocos'
-//   } else {
-//     this.textContent = 'Linhas'
-//   }
-// })
+    mural.classList.toggle('mural--linha')
+  })
+})()

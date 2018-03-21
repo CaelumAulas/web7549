@@ -1,9 +1,17 @@
-var lixeiras = document.querySelectorAll('.opcoesDoCartao-remove')
-var cartoes = document.querySelectorAll('.cartao')
+;(function() {
+  const button = document.querySelectorAll('.opcoesDoCartao-remove')
 
-for(var index = 0; index < lixeiras.length; index = index + 1) {
-  lixeiras[index].addEventListener('click', function() {
-    this.parentNode.parentNode.remove()
-  })
-}
+  for(var index = 0; index < button.length; index = index + 1) {
+    button[index].addEventListener('click', function() {
+      const cartao = this.parentNode.parentNode
 
+      cartao.addEventListener('transitionend', (event) => {
+        if (event.propertyName == 'opacity') {
+          cartao.remove()
+        }
+      })
+      
+      cartao.classList.add('cartao--some')
+    })
+  }
+})()

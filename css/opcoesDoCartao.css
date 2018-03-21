@@ -5,6 +5,17 @@
 	left: 0;
 	transform: translate(-1em, -50%);
 	white-space: nowrap;
+	opacity: 0;
+	pointer-events: none;
+
+	transition: opacity 300ms linear;
+}
+
+.cartao:hover .opcoesDoCartao,
+.cartao:focus .opcoesDoCartao,
+.cartao--focado .opcoesDoCartao {
+	pointer-events: auto;
+	opacity: 1;
 }
 
 .opcoesDoCartao-opcao {

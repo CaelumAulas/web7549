@@ -8,32 +8,23 @@
 	font-family: "Lucida Grande", "Helvetica", "Arial", sans-serif;
 	background: #EBEF40;
 	box-shadow: 1px 1px 1px rgba(0,0,0,.1);
-	transition: transform .2s ease-in;
-}
-
-.cartao--some {
-	opacity: 0;
-	transition: 0.5s;
+	transition: transform .2s cubic-bezier(.42,0,0,1.67);
+	transform: scale(1);
 }
 
 .cartao.cartao--focado,
 .cartao:hover,
 .cartao:focus {
-	transform: scale(1.1);
+	transform: scale(1.2);
 	z-index: 2;
 }
 
-/*.cartao .opcoesDoCartao-opcao {
+.mural .cartao--some {
 	opacity: 0;
-	transition: opacity .2s ease;
+	transform: scale(0);
+	transition: opacity 500ms linear 100ms,
+							transform 500ms linear; /* .5s 0.5s */
 }
-
-.cartao:focus .opcoesDoCartao-opcao,
-.cartao--focado .opcoesDoCartao-opcao{
-	opacity: 1;
-}
-*/
-
 
 .cartao-conteudo {
 	white-space: pre-line;
