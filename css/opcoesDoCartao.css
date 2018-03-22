@@ -15,6 +15,7 @@
 .cartao:focus .opcoesDoCartao,
 .cartao--focado .opcoesDoCartao {
 	pointer-events: auto;
+
 	opacity: 1;
 }
 
